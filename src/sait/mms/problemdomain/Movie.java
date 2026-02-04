@@ -1,5 +1,5 @@
 package sait.mms.problemdomain;
-
+//The main method will serve as the entry point to the program, initializing the necessary components and triggering the main menu.
 public class Movie {
 	//attributes
 	private int duration;//in minutes
@@ -42,7 +42,8 @@ public class Movie {
 	//Overridden toString
 	@Override
 	public String toString() {
-		return String.format("Movie [duration=%s, title=%s, year=%s]", duration, title, year);
+		return duration + "\t\t" + year + "\t" + title;
+//		return String.format("Movie [duration=%s, title=%s, year=%s]", duration, title, year);
 	}
 	
 }
