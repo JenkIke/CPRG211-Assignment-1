@@ -44,16 +44,39 @@ public class MovieManager {
 	
 	//displayMenu: Displays the main menu to the user.
 	private void displayMenu() {
-		int choice = 0;
-		//choice 1:
-		addMovie();
-		//choice 2:
-		generateMovieListInYear();
-		//choice 3:
-		generateRandomMovieList();
-		//choice 4:
-		saveMovieListToFile();
-		
+    	while(true) {
+			System.out.println("\nMovie Management system");
+			System.out.println("1 Add New Movie and Save");
+			System.out.println("2 Generate List of Movies Released in a Year");
+			System.out.println("3 Generate List of Random Movies");
+			System.out.println("4 Exit");
+			System.out.print("\nEnter an option: ");
+			
+			int choice;
+			
+			if(keyboard.hasNextInt()) {
+				choice = keyboard.nextInt();
+				keyboard.nextLine();
+			} else {
+				keyboard.nextLine();
+				System.out.println("\nInvalid option");
+				continue;
+			}
+			
+			if (choice == 1) {
+				addMovie();
+			}else if (choice == 2) {
+				generateMovieListInYear();
+			}else if (choice == 3) {
+				generateRandomMovieList();
+			}else if (choice == 4) {
+				saveMovieListToFile();
+				System.out.println("Saving movies...");
+				break;
+			}else {
+				System.out.println("\nInvalid option");
+			}
+    	}
 	}
 	//addMovie: Prompts the user to add a movie.	
 	private void addMovie() {
